@@ -1,0 +1,72 @@
+/**
+   This program calculates the cost of internet service for 3 different
+   service packages based on package used and hours used.
+
+   Iris Buschelman
+   CS11A, Section 5
+   Lab 2
+   March 25, 2014
+*/
+
+import java.util.Scanner;
+import java.util.DecimalFormat;
+
+public class Lab2
+{
+    public static void main(String[] args)
+    {
+	String input;
+	char type;
+	int hours;
+	double charge;
+
+	DecimalFormat formatter = new DecimalFormat("$#,##0.00");
+
+	Scanner keyboard = new Scanner(System.in);
+
+	System.out.println("Internet Service Provider Monthly Bill\n");
+
+	System.out.print("Enter package type (A, B, or C): ");
+	input = keyboard.nextLine();
+	input = input.toUpperCase();
+        type = input.charAt(0);
+
+	if( type != 'A' && type != 'B' && type != 'C')
+	    System.out.println("Invalid Package Type.");
+	else 
+	{
+	    System.out.print("Enter number of hours: ");
+	    hours = keyboard.nextInt();
+	    if( hours < 0)
+		System.out.println("Hours cannot be negative.");
+	    else if( hours > 744 )
+		System.out.println("Hours cannot exceed 744");
+	    else
+	    {
+		switch(type)
+		    {
+		    case 'A': 
+			if( hours < 10) 
+			    charge = 9.95;
+			else
+			    charge = 9.95 + (hours - 10) * 2.00;
+			System.out.println("Total due: " + 
+					   formatter.format(charge));
+			break;
+		    case 'B':
+			if( hours < 20)
+			    charge = 13.95;
+			else
+			    charge = 13.95 + (hours - 10);
+			System.out.println("Total due: " +
+					   formatter.format(charge));
+			break;
+		    case 'C':
+		        System.out.println("Total due: $19.95");
+		    default:
+			System.out.println("Invalid Package Type");
+		    }
+	    }
+	}
+    }
+}

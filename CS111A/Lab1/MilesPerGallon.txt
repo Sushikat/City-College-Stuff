@@ -1,0 +1,58 @@
+Script started on Tue 25 Feb 2014 03:53:22 PM PST
+[ibuschel@hills Lab1]$ cat MilesPerGallon.java
+import java.util.Scanner; // Needed for keyboard input
+
+/**
+   This program calculates miles per gallon for the inputs of
+   miles driven and gallons used.
+
+   Iris Buschelman
+   CS111A, Section 5
+   Lab 1
+   February 25, 2014
+*/
+public class MilesPerGallon
+{
+	public static void main(String[] args) 
+	{
+		float milesDriven;	  // Holds Miles Driven by user
+		float gallonsUsed;	  // Holds Gallons Used by user
+		float milesPerGallon;	  // Holds final Miles Per Gallon 
+		
+		// Define new Scanner object for user input
+		Scanner keyboard = new Scanner(System.in); 
+
+		// Get the number of Miles user has Driven since last fill up
+		System.out.println("How many miles have you driven" +
+				   " since your last fill-up?");
+		milesDriven = keyboard.nextFloat();
+
+		// Get the number of Gallons used since last fill up
+		System.out.println("How many gallons have you used up?");
+		gallonsUsed = keyboard.nextFloat();
+
+		// Calculate Miles Per Gallon
+		milesPerGallon = milesDriven / gallonsUsed; 
+
+		// Display the information back to user
+		System.out.println("The car gets " + milesPerGallon +
+				   " miles per gallon.");
+	}
+}
+[ibuschel@hills Lab1]$ javac MilesPerGallon.java
+[ibuschel@hills Lab1]$ aja[ibuschel@hills Lab1]$ java MilesPerGallon
+How many miles have you driven since your last fill-up?
+100
+How many gallons have you used up?
+7
+The car gets 14.285714 miles per gallon.
+[ibuschel@hills Lab1]$ java MilesPerGallon
+How many miles have you driven since your last fill-up?
+150.6
+How many gallons have you used up?
+3.7
+The car gets 40.702705 miles per gallon.
+[ibuschel@hills Lab1]$ exit
+exit
+
+Script done on Tue 25 Feb 2014 03:54:47 PM PST

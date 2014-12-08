@@ -1,0 +1,53 @@
+/* 
+   This program calculates distance based on rate of travel and hours 
+   spent traveling.
+   
+   Iris Buschelman
+   CS111A, Section 5
+   Lab 3
+   April 21, 2014
+*/
+
+import java.util.Scanner;
+
+public class Lab3
+{
+    public static void main(String[] args)
+    {
+	int speed;
+	int hours;
+	int distance;
+	
+	Scanner keyboard = new Scanner(System.in);
+	
+	System.out.print("What is the speed of the vehicle in MPH? ");
+	
+	speed = keyboard.nextInt();
+	
+        while(speed < 0)
+	    {
+		System.out.println("Error: Speed cannot be negative.");
+		System.out.print("What is the speed of the "
+				 +"vehicle in MPH? ");
+		speed = keyboard.nextInt();
+	    }
+
+	System.out.print("How many hours has it traveled? ");
+
+	hours = keyboard.nextInt();
+
+	while(hours < 1)
+	    {
+		System.out.println("Error: Time must be positive.");
+		System.out.print("How many hours has it traveled? ");
+		hours = keyboard.nextInt();
+	    }
+	
+	System.out.println("Hours     Distance Traveled");
+	for(int i = 1; i <= hours; i++)
+	    {
+		distance = speed * i;
+		System.out.printf("%2d %16d\n",i,distance);
+	    }
+    }
+}

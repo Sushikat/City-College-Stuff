@@ -1,0 +1,40 @@
+import java.util.*;
+
+/*
+  Iris Buschelman
+  CS111B: Progrmaming Fundamentals - Java
+  CRN: 52499 -- 001
+  Assignment 3 -- Number Guesser
+  DUE: 6/22/2014
+ */
+
+public class Assingment3 {
+    public static void main(String[] args) {
+	Scanner keyboard = new Scanner(System.in);
+
+	do {
+	    playOneGame();
+	} while(shouldPlayAgain());
+    }
+    public static void playOneGame() {
+	int midpoint;
+	char input;
+	System.out.println("Guess a number between 1 and 100. (Don't tell me)");
+	midpoint = getMidpoint(1,100);
+	System.out.print("Is it %d? (h/l/c)", midpoint);
+	input = keyboard.next().toLowerCase().charAt(0);
+	do {
+	    
+	    switch (input) {
+	    case 'h': midpoint = getMidpoint(midpoint, 100);
+		System.out.println("Is it %d? (h/l/c)", midpoint);
+		break;
+	    case 'l': midpoint = getMidpoint(midpoint, 50);
+		System.out.p
+		    
+    }
+    public static int getMidpoint(int bottom, int top) {
+	int midpoint = bottom/top;
+	return midpoint;
+    }
+}

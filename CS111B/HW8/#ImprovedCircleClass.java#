@@ -1,0 +1,31 @@
+public class MyCircle {    
+    
+    /**
+       Retrives the value of the radius
+       @return radius the radius of the circle                            
+    */
+    public double getRadius() {
+        return radius;
+    }
+    /**
+       Retrives the Area calculated by PI*Radius^2
+       @return PI*radius^2 the area formula using the circle's radius
+    */
+    public double getArea() {
+        return PI * radius*radius;
+    }
+    /**
+       Use distance squared compared to max distance squared to solve check for Overlap
+       Can use squares because if oneNum > otherNum, than oneNum^2 > otherNum^2
+       @param otherCircle is the circle to be checked against the current circle
+       @return boolean to see if overlap occured
+    */
+    public boolean doesOverlap(MyCircle otherCircle) {
+        double realDist = (otherCircle.x - x)*(otherCircle.x - x) + (otherCircle.y - y)*(otherCircle.y - y);
+        double maxDist = (radius + otherCircle.getRadius())*(radius + otherCircle.getRadius());
+        if(maxDist > realDist)
+            return true;
+        else
+            return false;
+    }
+}
